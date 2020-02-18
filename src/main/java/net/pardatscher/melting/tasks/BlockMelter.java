@@ -2,10 +2,12 @@ package net.pardatscher.melting.tasks;
 
 import net.pardatscher.melting.Melting;
 import net.pardatscher.melting.repositories.LavaRepository;
+import org.bukkit.ChunkSnapshot;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.BlockVector;
 
 import java.util.Map;
+import java.util.Set;
 
 public class BlockMelter implements Runnable {
 
@@ -15,7 +17,7 @@ public class BlockMelter implements Runnable {
     public void run() {
         while (JavaPlugin.getPlugin(Melting.class).isEnabled()) {
             try {
-                Map<String, BlockVector> worldBlockVectorMap = lavaRepository.getWorldBlockVectorMap();
+                Map<ChunkSnapshot, Set<BlockVector>> chunkSnapshotBlockVectorMap = lavaRepository.getChunkSnapshotBlockVectorMap();
 
 
             } catch (InterruptedException e) {

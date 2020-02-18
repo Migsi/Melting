@@ -36,7 +36,7 @@ public class LavaFinder implements Runnable {
                         for (int x = 0; x < 16; ++x) {
                             for (int z = 0; z < 16; ++z) {
                                 if (chunkSnapshot.getBlockData(x, y, z).getMaterial() == Material.LAVA) {
-                                    lavaRepository.add(chunkSnapshot.getWorldName(), new BlockVector(x, y, z));
+                                    lavaRepository.add(chunkSnapshot, new BlockVector(x, y, z));
                                 }
                             }
                         }
