@@ -1,5 +1,7 @@
-package net.pardatscher.melting;
+package net.pardatscher.melting.listeners;
 
+import net.pardatscher.melting.Melting;
+import net.pardatscher.melting.repositories.ChunkRepository;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;

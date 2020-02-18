@@ -1,14 +1,16 @@
-package net.pardatscher.melting;
+package net.pardatscher.melting.tasks;
 
+import net.pardatscher.melting.Melting;
+import net.pardatscher.melting.repositories.ChunkRepository;
+import net.pardatscher.melting.repositories.LavaRepository;
 import org.bukkit.ChunkSnapshot;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.BlockVector;
 
 import java.util.Set;
 
-public class LavaFinder extends BukkitRunnable {
+public class LavaFinder implements Runnable {
 
     private final ChunkRepository chunkRepository = JavaPlugin.getPlugin(Melting.class).getChunkRepository();
     private final LavaRepository lavaRepository = JavaPlugin.getPlugin(Melting.class).getLavaRepository();
@@ -34,7 +36,7 @@ public class LavaFinder extends BukkitRunnable {
                         for (int x = 0; x < 16; ++x) {
                             for (int z = 0; z < 16; ++z) {
                                 if (chunkSnapshot.getBlockData(x, y, z).getMaterial() == Material.LAVA) {
-                                    lavaRepository.add(new BlockVector(x, y, z));
+                                    lavaRepository.add(chunkSnapshot.getWorldName(), new BlockVector(x, y, z));
                                 }
                             }
                         }

@@ -1,4 +1,4 @@
-package net.pardatscher.melting;
+package net.pardatscher.melting.repositories;
 
 import org.bukkit.ChunkSnapshot;
 
