@@ -1,0 +1,6 @@
+name: Melting
+version: ${project.version}
+main: net.pardatscher.melting.Melting
+api-version: 1.13
+authors: [Migsi, MrRulf]
+description: If there is enough lava, it can melt blocks.
