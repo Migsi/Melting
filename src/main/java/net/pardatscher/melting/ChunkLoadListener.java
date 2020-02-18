@@ -14,7 +14,7 @@ public class ChunkLoadListener implements Listener {
     @EventHandler
     public void onChunkLoad(ChunkLoadEvent event) {
         if (event.getChunk().contains(Material.LAVA.createBlockData()) && chunkRepository.addUnchecked(event.getChunk().getChunkSnapshot())) {
-            Bukkit.getLogger().info("Found Lava in Chunk x: " + event.getChunk().getX() + " y: " + event.getChunk().getZ());
+            Bukkit.getLogger().info("Found Lava in Chunk x: " + event.getChunk().getX() + " z: " + event.getChunk().getZ());
         }
     }
 }
