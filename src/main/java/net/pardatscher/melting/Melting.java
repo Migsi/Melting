@@ -5,7 +5,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Melting extends JavaPlugin {
 
+    private final ChunkRepository chunkRepository = new ChunkRepository();
+    private final LavaRepository lavaRepository = new LavaRepository();
+
     private ChunkLoadListener listener;
+
+    public ChunkRepository getChunkRepository() {
+        return chunkRepository;
+    }
+
+    public LavaRepository getLavaRepository() {
+        return lavaRepository;
+    }
 
     @Override
     public void onEnable() {
